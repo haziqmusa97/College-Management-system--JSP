@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>SmartKolej</title>
+    </h:head>
+    <h:body>
+                  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Smart Kolej</a>
+          </div>
+                    <ul class="nav navbar-nav">
+            <li class="active"><a href="index.xhtml">Home</a></li>
+            <li><a href="viewmerit.xhtml">View Merit</a></li>
+            <li><a href="registermerit.xhtml">Register Merit</a></li>
+            <li><a href="viewevent.xhtml">View Event</a></li>
+            <li><a href="registerevent.xhtml">Register Event</a></li>
+            <li><a href="viewstudent.xhtml">View Student</a></li>
+            <li><a href="registerstudent.xhtml">Register Student</a></li>
+            <li><a href="viewstudentroom.xhtml">Room </a></li>
+            <li><a href="studentpage.xhtml">Log Out</a></li>
+          </ul>
+        </div>
+        </nav>
+        <h2 align="center">Student List</h2>
+        <legend background="#191970" color="#191970" border="1px solid"></legend>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h:form styleClass="form-horizontal">
+                    <h:dataTable value="#{student.get_all_student}" var="cat" class="table table-responsive table-condensed">
+        
+                    <h:column>
+                         <f:facet name="header">No</f:facet>
+                         <h:outputText value="#{cat.student_no}"></h:outputText>
+                    </h:column>    
+                        
+                    <h:column>
+                         <f:facet name="header">Student ID</f:facet>
+                         <h:outputText value="#{cat.student_id}"></h:outputText>
+                    </h:column>    
+                        
+                    <h:column>
+                         <f:facet name="header">Student Name</f:facet>
+                         <h:outputText value="#{cat.student_name}"></h:outputText>
+                    </h:column> 
+                        
+                    <h:column>
+                         <f:facet name="header">Student Programme</f:facet>
+                         <h:outputText value="#{cat.student_course}"></h:outputText>
+                    </h:column>  
+                        
+                    <h:column>
+                         <f:facet name="header">Student Kolej</f:facet>
+                         <h:outputText value="#{cat.student_kolej}"></h:outputText>
+                    </h:column> 
+                        
+                    <h:column>
+                         <f:facet name="header">Student IC</f:facet>
+                         <h:outputText value="#{cat.student_ic}"></h:outputText>
+                    </h:column>     
+                        
+                         
+                        
+                   
+                        
+                    <h:column>
+                          <f:facet name="header">Edit</f:facet>
+                          <h:commandButton value="Edit" action="#{student.edit_student}" styleClass="btn btn-danger">
+                             <f:param name="action" value="#{cat.student_no}" />
+                             </h:commandButton >
+                    </h:column>
+        
+                     <h:column>
+                         <f:facet name="header">Delete</f:facet>
+                              <h:commandButton value="Delete" action="#{student.delete_student}" styleClass="btn btn-danger">
+                               <f:param name="action" value="#{cat.student_no}" />
+                              </h:commandButton>
+                    </h:column>
+                        
+                        
+                    </h:dataTable>
+                    </h:form>
+                </div>
+
+        
+            </div>
+    </h:body>
+    
+    <style>
+        body {
+   background-image: url('../resources/view5.jpg');
+  
+}
+        </style>
+    
+</html>
+

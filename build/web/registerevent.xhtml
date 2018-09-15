@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>SmartKolej</title>
+    </h:head>
+    <h:body>
+                <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Smart Kolej</a>
+          </div>
+                    <ul class="nav navbar-nav">
+            <li class="active"><a href="index.xhtml">Home</a></li>
+            <li><a href="viewmerit.xhtml">View Merit</a></li>
+            <li><a href="registermerit.xhtml">Register Merit</a></li>
+            <li><a href="viewevent.xhtml">View Event</a></li>
+            <li><a href="registerevent.xhtml">Register Event</a></li>
+            <li><a href="viewstudent.xhtml">View Student</a></li>
+            <li><a href="registerstudent.xhtml">Register Student</a></li>
+            <li><a href="viewstudentroom.xhtml">Room </a></li>
+            <li><a href="studentpage.xhtml">Log Out</a></li>
+          </ul>
+        </div>
+        </nav>
+        <h2 align="center">Event Registeration Form</h2>
+        <legend background="#191970" color="#191970" border="1px solid"></legend>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="account-wall">
+                    <h:form  styleClass="form-horizontal">
+                        <div class="form-group">
+                         <h:outputLabel value="Event Name:" styleClass="control-label col-sm-2"/>
+				<div class="col-sm-4">
+                                    <h:inputText value="#{event.event_name}" styleClass="form-control"/>
+				</div>
+			</div>
+                        
+                        <div class="form-group">
+                         <h:outputLabel value="Event Organizer:" styleClass="control-label col-sm-2"/>
+				<div class="col-sm-4">
+                                    <h:inputText value="#{event.event_org}" styleClass="form-control"/>
+				</div>
+			</div>
+                        
+                        <div class="form-group">
+                         <h:outputLabel value="Event Date:" styleClass="control-label col-sm-2"/>
+				<div class="col-sm-4">
+                                    <h:inputText value="#{event.event_date}" styleClass="form-control"/>
+				</div>
+			</div>
+			<div class="form-group">
+                         <h:outputLabel value="Event Venue:" styleClass="control-label col-sm-2"/>
+				<div class="col-sm-4">
+                                    <h:inputText value="#{event.event_venue}" styleClass="form-control"/>
+				</div>
+			</div>
+                        
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <h:commandButton action="#{event.add_event()}" value="Add" styleClass="btn btn-success"/>
+                        </div>
+                    </h:form>
+                    </div>
+                </div>
+            </div>
+    </h:body>
+    <style>
+        
+        .account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 50px 0px;
+    background-color: #f7f7f780;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.59);
+    position: relative;
+}
+
+body {
+   background-image: url('../resources/view5.jpg');
+  
+}
+    </style>
+    
+</html>
+

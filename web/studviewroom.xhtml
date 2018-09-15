@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+       	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Conpatible" content="IE=edge" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css"></h:outputStylesheet>
+	<title>SmartKolej</title>
+    </h:head>
+    <h:body>
+                  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Smart Kolej</a>
+          </div>
+                          <ul class="nav navbar-nav">
+          <li class="active"><a href="studentindex.xhtml">Home</a></li>
+            <li><a href="Studviewevent.xhtml">View Event</a></li>
+            <li><a href="Studkeyinmerit.xhtml">KeyIn Merit</a></li>
+            <li><a href="Studentbidroom.xhtml">Room Bid</a></li>
+            <li><a href="Studviewmerit.xhtml">View Merit</a></li>
+            <li><a href="studviewroom.xhtml">View Room</a></li>
+            <li><a href="Studupdate.xhtml"> Profile</a></li>
+            <li><a href="studentpage.xhtml">Log Out</a></li>
+          </ul>
+        </div>
+        </nav>
+        <h2 align="center">Student Room</h2>
+        <legend background="#191970" color="#191970" border="1px solid"></legend>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h:form styleClass="form-horizontal">
+                    <h:dataTable value="#{room.get_all_room}" var="cat" class="table table-responsive table-condensed">
+        
+                    <h:column>
+                         <f:facet name="header">Student ID</f:facet>
+                         <h:outputText value="#{cat.student_id}"></h:outputText>
+                    </h:column>    
+                        
+                    <h:column>
+                         <f:facet name="header">Collage</f:facet>
+                         <h:outputText value="#{cat.collage}"></h:outputText>
+                    </h:column>    
+                        
+                    <h:column>
+                         <f:facet name="header">Room Number</f:facet>
+                         <h:outputText value="#{cat.numroom}"></h:outputText>
+                    </h:column> 
+                        
+                    <h:column>
+                         <f:facet name="header">Status</f:facet>
+                         <h:outputText value="#{cat.status}"></h:outputText>
+                    </h:column>  
+                        
+                      
+                        
+                         
+                        
+                   
+                        
+                   
+        
+                     
+                        
+                        
+                    </h:dataTable>
+                    </h:form>
+                </div>
+
+        
+            </div>
+    </h:body>
+    
+    <style>
+        body {
+   background-image: url('../resources/view5.jpg');
+  
+}
+        </style>
+    
+</html>
+
